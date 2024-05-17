@@ -14,6 +14,9 @@
 		E064D8922BF7E4A300438211 /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8912BF7E4A300438211 /* AppetizerListView.swift */; };
 		E064D8942BF7E4AA00438211 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8932BF7E4AA00438211 /* AccountView.swift */; };
 		E064D8962BF7E4B900438211 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8952BF7E4B900438211 /* OrderView.swift */; };
+		E064D8A32BF7EDB000438211 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8A22BF7EDB000438211 /* Appetizer.swift */; };
+		E064D8A52BF7EF2B00438211 /* AppetizerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8A42BF7EF2B00438211 /* AppetizerResponse.swift */; };
+		E064D8A72BF7EFA400438211 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8A62BF7EFA400438211 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		E064D8912BF7E4A300438211 /* AppetizerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListView.swift; sourceTree = "<group>"; };
 		E064D8932BF7E4AA00438211 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E064D8952BF7E4B900438211 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		E064D8A22BF7EDB000438211 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
+		E064D8A42BF7EF2B00438211 /* AppetizerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerResponse.swift; sourceTree = "<group>"; };
+		E064D8A62BF7EFA400438211 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		E064D8972BF7EBA500438211 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E064D8A62BF7EFA400438211 /* MockData.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -95,6 +102,8 @@
 		E064D8992BF7EBAF00438211 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E064D8A22BF7EDB000438211 /* Appetizer.swift */,
+				E064D8A42BF7EF2B00438211 /* AppetizerResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,11 +243,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E064D8A32BF7EDB000438211 /* Appetizer.swift in Sources */,
 				E064D8942BF7E4AA00438211 /* AccountView.swift in Sources */,
 				E064D8862BF7E3A900438211 /* AppetizerTabView.swift in Sources */,
 				E064D8842BF7E3A900438211 /* AppetizerHubApp.swift in Sources */,
 				E064D8922BF7E4A300438211 /* AppetizerListView.swift in Sources */,
+				E064D8A72BF7EFA400438211 /* MockData.swift in Sources */,
 				E064D8962BF7E4B900438211 /* OrderView.swift in Sources */,
+				E064D8A52BF7EF2B00438211 /* AppetizerResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
