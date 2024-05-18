@@ -9,10 +9,10 @@ import Foundation
 
 struct MockData {
     static let sampleAppetizer = Appetizer(id: 123,
-                                           name: "Test Appetizer",
-                                           description: "Test App Descripion 😋",
+                                           name: "Asian Flank Steak",
+                                           description: "Yummy flank steak 😋",
                                            price: 7.99,
-                                           imageURL: "",
+                                           imageURL: "asian-flank-steak",
                                            calories: 199,
                                            protein: 59,
                                            carbs: 29)
