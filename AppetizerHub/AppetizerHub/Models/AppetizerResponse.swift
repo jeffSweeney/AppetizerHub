@@ -8,5 +8,5 @@
 import Foundation
 
 struct AppetizerResponse: Decodable {
-    let response: [Appetizer]
+    let request: [Appetizer]
 }
