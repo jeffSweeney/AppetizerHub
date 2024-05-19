@@ -11,6 +11,7 @@
 		E0008C062BF8D2590091B10F /* Double+AppetizerHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C052BF8D2590091B10F /* Double+AppetizerHub.swift */; };
 		E0008C082BF942FA0091B10F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C072BF942FA0091B10F /* NetworkManager.swift */; };
 		E0008C0A2BF9440F0091B10F /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C092BF9440F0091B10F /* APError.swift */; };
+		E0008C0E2BFA385A0091B10F /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C0D2BFA385A0091B10F /* AppetizerListViewModel.swift */; };
 		E064D8842BF7E3A900438211 /* AppetizerHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8832BF7E3A900438211 /* AppetizerHubApp.swift */; };
 		E064D8862BF7E3A900438211 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8852BF7E3A900438211 /* AppetizerTabView.swift */; };
 		E064D8882BF7E3AB00438211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E064D8872BF7E3AB00438211 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		E0008C052BF8D2590091B10F /* Double+AppetizerHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+AppetizerHub.swift"; sourceTree = "<group>"; };
 		E0008C072BF942FA0091B10F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E0008C092BF9440F0091B10F /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
+		E0008C0D2BFA385A0091B10F /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 		E064D8802BF7E3A900438211 /* AppetizerHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppetizerHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E064D8832BF7E3A900438211 /* AppetizerHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerHubApp.swift; sourceTree = "<group>"; };
 		E064D8852BF7E3A900438211 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0008C0B2BFA38330091B10F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E064D8912BF7E4A300438211 /* AppetizerListView.swift */,
+				E0008C032BF8CFF90091B10F /* AppetizerListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E0008C0C2BFA38390091B10F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0008C0D2BFA385A0091B10F /* AppetizerListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E064D8772BF7E3A900438211 = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +190,8 @@
 		E064D8A02BF7EC2300438211 /* AppetizerList */ = {
 			isa = PBXGroup;
 			children = (
-				E064D8912BF7E4A300438211 /* AppetizerListView.swift */,
-				E0008C032BF8CFF90091B10F /* AppetizerListCell.swift */,
+				E0008C0B2BFA38330091B10F /* View */,
+				E0008C0C2BFA38390091B10F /* ViewModel */,
 			);
 			path = AppetizerList;
 			sourceTree = "<group>";
@@ -256,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E064D8A32BF7EDB000438211 /* Appetizer.swift in Sources */,
+				E0008C0E2BFA385A0091B10F /* AppetizerListViewModel.swift in Sources */,
 				E0008C062BF8D2590091B10F /* Double+AppetizerHub.swift in Sources */,
 				E064D8942BF7E4AA00438211 /* AccountView.swift in Sources */,
 				E064D8862BF7E3A900438211 /* AppetizerTabView.swift in Sources */,
