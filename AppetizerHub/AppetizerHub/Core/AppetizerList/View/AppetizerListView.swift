@@ -18,14 +18,15 @@ struct AppetizerListView: View {
             .navigationTitle("🍱 Appetizers")
         }
         .onAppear {
-            // MARK: - Completion Handler call (approach in tutorial)
-//            viewModel.getAppetizers()
-            
-            // MARK: Async / Await call (my challenge addition)
             Task {
                 await viewModel.getAppetizers()
             }
         }
+        .alert(viewModel.alertItem?.title ?? "Error",
+               isPresented: $viewModel.showAlert,
+               actions: { Button("OK") { viewModel.alertItem = nil } },
+               message: { viewModel.alertItem?.message ?? Text("Unexpected Error - Try Again.") }
+        )
     }
 }
 
