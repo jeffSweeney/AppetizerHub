@@ -12,12 +12,12 @@ struct AppetizerListCell: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(appetizer.imageURL) // TODO: Refactor to pull image url over network
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 75)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-            
+            AsyncImage(url: URL(string: appetizer.imageURL)) { image in
+                image.asCellImage
+            } placeholder: {
+                Image("food-placeholder").asCellImage
+            }
+
             VStack(alignment: .leading, spacing: 5) {
                 Text(appetizer.name)
                     .font(.title3)

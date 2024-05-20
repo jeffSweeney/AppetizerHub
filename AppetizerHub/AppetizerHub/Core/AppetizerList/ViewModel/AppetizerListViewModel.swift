@@ -36,7 +36,7 @@ final class AppetizerListViewModel: ObservableObject {
             alertItem = AlertItem.forError(error: error)
         }
         
-        sleep(2)
+        sleep(1) // Prevent quick transition
         
         isLoading = false
     }
