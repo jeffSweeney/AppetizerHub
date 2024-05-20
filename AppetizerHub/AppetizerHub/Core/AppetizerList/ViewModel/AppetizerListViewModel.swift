@@ -5,11 +5,13 @@
 //  Created by Jeffrey Sweeney on 5/19/24.
 //
 
-import Foundation
+import SwiftUI
 
 final class AppetizerListViewModel: ObservableObject {
     @Published var appetizers: [Appetizer] = []
     @Published var showAlert = false
+    @Published var isLoading = true
+    
     var alertItem: AlertItem? {
         didSet {
             if alertItem == nil {
@@ -22,6 +24,8 @@ final class AppetizerListViewModel: ObservableObject {
     
     @MainActor
     func getAppetizers() async {
+        isLoading = true
+        
         let result = await NetworkManager.shared.getAppetizers()
         
         switch result {
@@ -31,5 +35,9 @@ final class AppetizerListViewModel: ObservableObject {
         case .failure(let error):
             alertItem = AlertItem.forError(error: error)
         }
+        
+        sleep(2)
+        
+        isLoading = false
     }
 }
