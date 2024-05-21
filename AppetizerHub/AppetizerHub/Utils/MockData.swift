@@ -10,7 +10,7 @@ import Foundation
 struct MockData {
     static let sampleAppetizer = Appetizer(id: 123,
                                            name: "Asian Flank Steak",
-                                           description: "Yummy flank steak 😋",
+                                           description: "Yummy flank steak 😋 that is sure to impress the whole party!",
                                            price: 7.99,
                                            imageURL: "asian-flank-steak",
                                            calories: 199,
