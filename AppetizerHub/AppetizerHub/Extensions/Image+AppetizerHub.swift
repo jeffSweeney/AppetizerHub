@@ -19,4 +19,12 @@ extension Image {
                     .stroke(.brandPrimary, lineWidth: 1.5)
             }
     }
+    
+    var asDetailImage: some View {
+        self
+            .resizable()
+            .scaledToFit()
+            .frame(width: 300, height: 225)
+            .frame(maxWidth: .infinity)
+    }
 }
