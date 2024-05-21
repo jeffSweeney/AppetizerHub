@@ -1,5 +1,5 @@
 //
-//  AppetizerDetailsView_New.swift
+//  AppetizerDetailsView.swift
 //  AppetizerHub
 //
 //  Created by Jeffrey Sweeney on 5/21/24.
@@ -13,18 +13,21 @@ struct AppetizerDetailsView: View {
     var body: some View {
         VStack(spacing: 24) {
             AsyncImage(url: URL(string: appetizer.imageURL),
-                       content: { configureImage(with: $0) },
-                       placeholder: { configureImage() })
+                       content: { $0.asDetailImage },
+                       placeholder: { Image("food-placeholder").asDetailImage.background(.brandPrimary) })
             
-            VStack {
+            VStack(spacing: 24) {
                 Text(appetizer.name)
                     .font(.title2)
                     .fontWeight(.semibold)
                 
                 Text(appetizer.description)
+                    .padding(.horizontal)
                     .multilineTextAlignment(.center)
                     .font(.body)
-                    .padding()
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    .minimumScaleFactor(0.9)
                 
                 HStack(spacing: 24) {
                     NutritionStatStack(title: "Calories", value: "\(appetizer.calories)")
@@ -38,34 +41,30 @@ struct AppetizerDetailsView: View {
             Button(action: {
                 print("Tapped!")
             }, label: {
-                Text("Button")
+                Text("\(appetizer.price.asCurrency) - Add to Order")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .frame(width: 250, height: 50)
+                    .background(.brandPrimary)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             })
             .padding(.bottom, 30)
         }
         .frame(width: 300, height: 525)
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(radius: 40)
+        .shadow(color: .primary, radius: 40)
         .overlay(alignment: .topTrailing) {
             Button(action: {
                 print("Dismissed")
             }, label: {
                 Image(systemName: "x.circle.fill")
                     .imageScale(.large)
-                    .foregroundStyle(Color(.systemBackground))
+                    .foregroundStyle(.white)
                     .padding()
             })
         }
-    }
-    
-    private func configureImage(with inputImage: Image? = nil) -> some View {
-        let image = inputImage ?? Image("asian-flank-steak")
-        
-        return image
-            .resizable()
-            .scaledToFit()
-            .frame(width: 300, height: 225)
-            .frame(maxWidth: .infinity)
     }
 }
 
