@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct NutritionStatStack: View {
+    let title: String
+    let value: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 8) {
+            Text(title)
+                .font(.caption)
+                .bold()
+            
+            Text(value)
+                .font(.body)
+                .fontWeight(.semibold)
+                .italic()
+                .foregroundStyle(.secondary)
+        }
     }
 }
 
 #Preview {
-    NutritionStatStack()
+    NutritionStatStack(title: "Calories", value: "740")
 }
