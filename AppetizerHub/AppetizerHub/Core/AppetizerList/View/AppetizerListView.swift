@@ -15,15 +15,23 @@ struct AppetizerListView: View {
             NavigationStack {
                 List(viewModel.appetizers) { appetizer in
                     AppetizerListCell(appetizer: appetizer)
+                        .onTapGesture {
+                            viewModel.selectedAppetizer = appetizer
+                        }
                 }
                 .navigationTitle("🍱 Appetizers")
                 .opacity(viewModel.isLoading ? 0.25 : 1)
-                .disabled(viewModel.isLoading)
+                .disabled(viewModel.isLoading || viewModel.selectedAppetizer != nil)
             }
             .onAppear {
                 Task {
                     await viewModel.getAppetizers()
                 }
+            }
+            .blur(radius: viewModel.selectedAppetizer != nil ? 20 : 0)
+            
+            if viewModel.selectedAppetizer != nil {
+                AppetizerDetailsView(viewModel: viewModel)
             }
             
             if viewModel.isLoading {

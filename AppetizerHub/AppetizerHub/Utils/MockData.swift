@@ -18,4 +18,11 @@ struct MockData {
                                            carbs: 29)
     
     static let appetizers = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
+    
+    static var detailViewModel: AppetizerListViewModel {
+        let viewModel = AppetizerListViewModel()
+        viewModel.selectedAppetizer = Self.sampleAppetizer
+        
+        return viewModel
+    }
 }

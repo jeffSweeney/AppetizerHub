@@ -8,7 +8,17 @@
 import SwiftUI
 
 struct AppetizerDetailsView: View {
+    @ObservedObject var viewModel: AppetizerListViewModel
     let appetizer: Appetizer
+    
+    init?(viewModel: AppetizerListViewModel) {
+        guard let appetizer = viewModel.selectedAppetizer else {
+            return nil
+        }
+        
+        self._viewModel = ObservedObject(wrappedValue: viewModel)
+        self.appetizer = appetizer
+    }
     
     var body: some View {
         VStack(spacing: 24) {
@@ -27,7 +37,7 @@ struct AppetizerDetailsView: View {
                     .font(.body)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    .minimumScaleFactor(0.9)
+                    .minimumScaleFactor(0.8)
                 
                 HStack(spacing: 24) {
                     NutritionStatStack(title: "Calories", value: "\(appetizer.calories)")
@@ -57,7 +67,7 @@ struct AppetizerDetailsView: View {
         .shadow(color: .primary, radius: 40)
         .overlay(alignment: .topTrailing) {
             Button(action: {
-                print("Dismissed")
+                viewModel.selectedAppetizer = nil
             }, label: {
                 Image(systemName: "x.circle.fill")
                     .imageScale(.large)
@@ -69,5 +79,5 @@ struct AppetizerDetailsView: View {
 }
 
 #Preview {
-    AppetizerDetailsView(appetizer: MockData.sampleAppetizer)
+    AppetizerDetailsView(viewModel: MockData.detailViewModel)
 }

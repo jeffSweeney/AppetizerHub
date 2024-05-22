@@ -11,6 +11,7 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var appetizers: [Appetizer] = []
     @Published var showAlert = false
     @Published var isLoading = true
+    @Published var selectedAppetizer: Appetizer? = nil
     
     var alertItem: AlertItem? {
         didSet {
