@@ -40,9 +40,9 @@ struct AppetizerDetailsView: View {
                     .minimumScaleFactor(0.8)
                 
                 HStack(spacing: 24) {
-                    NutritionStatStack(title: "Calories", value: "\(appetizer.calories)")
-                    NutritionStatStack(title: "Carbs", value: "\(appetizer.carbs) g")
-                    NutritionStatStack(title: "Protien", value: "\(appetizer.protein) g")
+                    NutritionStatStack(title: "Calories", value: appetizer.calories, unit: nil)
+                    NutritionStatStack(title: "Carbs", value: appetizer.carbs, unit: "g")
+                    NutritionStatStack(title: "Protien", value: appetizer.protein, unit: "g")
                 }
             }
             
@@ -51,13 +51,7 @@ struct AppetizerDetailsView: View {
             Button(action: {
                 print("Tapped!")
             }, label: {
-                Text("\(appetizer.price.asCurrency) - Add to Order")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .frame(width: 250, height: 50)
-                    .background(.brandPrimary)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                PrimaryButtonView(label: "\(appetizer.price.asCurrency) - Add to Order")
             })
             .padding(.bottom, 30)
         }
