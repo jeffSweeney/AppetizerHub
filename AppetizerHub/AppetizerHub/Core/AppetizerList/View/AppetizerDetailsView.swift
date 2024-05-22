@@ -69,10 +69,8 @@ struct AppetizerDetailsView: View {
             Button(action: {
                 viewModel.selectedAppetizer = nil
             }, label: {
-                Image(systemName: "x.circle.fill")
-                    .imageScale(.large)
-                    .foregroundStyle(.white)
-                    .padding()
+                DismissButton()
+                    .padding(2)
             })
         }
     }
