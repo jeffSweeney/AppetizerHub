@@ -69,7 +69,7 @@ struct AppetizerDetailsView: View {
             Button(action: {
                 viewModel.selectedAppetizer = nil
             }, label: {
-                DismissButton()
+                XDismissButton()
                     .padding(2)
             })
         }

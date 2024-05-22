@@ -1,5 +1,5 @@
 //
-//  DismissButton.swift
+//  XDismissButton.swift
 //  AppetizerHub
 //
 //  Created by Jeffrey Sweeney on 5/21/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DismissButton: View {
+struct XDismissButton: View {
     var body: some View {
         ZStack {
             Circle()
@@ -25,5 +25,5 @@ struct DismissButton: View {
 }
 
 #Preview {
-    DismissButton()
+    XDismissButton()
 }
