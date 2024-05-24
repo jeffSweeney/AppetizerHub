@@ -8,32 +8,27 @@
 import SwiftUI
 
 struct AccountView: View {
-    @State var firstName = ""
-    @State var lastName = ""
-    @State var email = ""
-    @State var birthday = Date()
-    @State var extraNapkinsIsOn = false
-    @State var frequntRefills = false
+    @StateObject var viewModel = AccountViewModel()
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
                     Group {
-                        TextField("First Name", text: $firstName)
+                        TextField("First Name", text: $viewModel.firstName)
                         
-                        TextField("Last Name", text: $lastName)
+                        TextField("Last Name", text: $viewModel.lastName)
                         
-                        TextField("Email", text: $email)
+                        TextField("Email", text: $viewModel.email)
                             .keyboardType(.emailAddress)
                             .textInputAutocapitalization(.never)
                     }
                     .autocorrectionDisabled()
                     
-                    DatePicker("Birthday", selection: $birthday, displayedComponents: .date)
+                    DatePicker("Birthday", selection: $viewModel.birthday, displayedComponents: .date)
                     
                     Button(action: {
-                        print("Tapped Save Changes")
+                        viewModel.saveChanges()
                     }, label: {
                         Text("Save Changes")
                     })
@@ -42,8 +37,8 @@ struct AccountView: View {
                 }
                 
                 Section {
-                    Toggle("Extra Napkins", isOn: $extraNapkinsIsOn)
-                    Toggle("Frequest Refills", isOn: $frequntRefills)
+                    Toggle("Extra Napkins", isOn: $viewModel.extraNapkinsIsOn)
+                    Toggle("Frequest Refills", isOn: $viewModel.frequntRefills)
                 } header: {
                     Text("Requests")
                 }

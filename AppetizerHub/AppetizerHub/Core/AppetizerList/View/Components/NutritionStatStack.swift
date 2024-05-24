@@ -13,7 +13,7 @@ struct NutritionStatStack: View {
     let unit: String?
     
     private var valueLabel: String {
-        var label = "\(value)"
+        let label = "\(value)"
         
         guard let unit else { return label }
         
