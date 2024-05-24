@@ -13,7 +13,7 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var selectedAppetizer: Appetizer? = nil
     
-    var alertItem: AlertItem? {
+    var alertItem: APAlert? {
         didSet {
             if alertItem == nil {
                 showAlert = false
@@ -34,7 +34,7 @@ final class AppetizerListViewModel: ObservableObject {
             self.appetizers = appetizers
             
         case .failure(let error):
-            alertItem = AlertItem.forError(error: error)
+            alertItem = APAlert.forError(error: error)
         }
         
         sleep(1) // Prevent quick transition

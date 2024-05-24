@@ -45,6 +45,11 @@ struct AccountView: View {
             }
             .tint(.brandPrimary)
             .navigationTitle("🥸 Account")
+            .alert(viewModel.alertItem?.title ?? "Error",
+                   isPresented: $viewModel.showAlert,
+                   actions: { Button("OK") { viewModel.alertItem = nil } },
+                   message: { viewModel.alertItem?.message ?? Text("Unexpected Error - Try Again.") }
+            )
         }
     }
 }
