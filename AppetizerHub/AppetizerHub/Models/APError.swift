@@ -14,4 +14,5 @@ enum APError: Error {
     case invalidResponse
     case invalidUrl
     case unableToComplete
+    case userEncodingFailure
 }

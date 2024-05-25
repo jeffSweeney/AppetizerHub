@@ -36,10 +36,28 @@ struct APAlert: Identifiable {
         case .invalidUrl:
             title = "Server Error"
             message = "There was an issue connecting to the server. If this persists, please contact support."
-        
+            
         case .unableToComplete:
             title = "Server Error"
             message = "Unable to complete your request at this time. Please check your internet connection."
+            
+        case .userEncodingFailure:
+            title = "Save Error"
+            message = "Failed to save profile updates. Please try again later."
+        }
+        
+        return APAlert(title: title,
+                       message: Text(message))
+    }
+    
+    static func forSuccess(success: APSuccess) -> Self {
+        let title: String
+        let message: String
+        
+        switch success {
+        case .userEncodingSuccess:
+            title = "Success!"
+            message = "Successfully updated user profile."
         }
         
         return APAlert(title: title,
