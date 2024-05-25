@@ -41,6 +41,10 @@ struct APAlert: Identifiable {
             title = "Server Error"
             message = "Unable to complete your request at this time. Please check your internet connection."
             
+        case .userDecodingFailure:
+            title = "Server Error"
+            message = "Failed to load profile. Please try again later."
+            
         case .userEncodingFailure:
             title = "Save Error"
             message = "Failed to save profile updates. Please try again later."

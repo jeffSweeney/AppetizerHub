@@ -13,5 +13,5 @@ struct User: Codable {
     var email = ""
     var birthday = Date()
     var extraNapkinsIsOn = false
-    var frequntRefills = false
+    var frequntRefillsIsOn = false
 }

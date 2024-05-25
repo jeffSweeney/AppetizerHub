@@ -38,13 +38,14 @@ struct AccountView: View {
                 
                 Section {
                     Toggle("Extra Napkins", isOn: $viewModel.user.extraNapkinsIsOn)
-                    Toggle("Frequest Refills", isOn: $viewModel.user.frequntRefills)
+                    Toggle("Frequest Refills", isOn: $viewModel.user.frequntRefillsIsOn)
                 } header: {
                     Text("Requests")
                 }
             }
             .tint(.brandPrimary)
             .navigationTitle("🥸 Account")
+            .onAppear { viewModel.retrieveUser() }
             .alert(viewModel.alertItem?.title ?? "Error",
                    isPresented: $viewModel.showAlert,
                    actions: { Button("OK") { viewModel.alertItem = nil } },
