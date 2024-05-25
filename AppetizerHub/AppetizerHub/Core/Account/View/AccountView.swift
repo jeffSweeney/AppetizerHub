@@ -15,17 +15,17 @@ struct AccountView: View {
             Form {
                 Section {
                     Group {
-                        TextField("First Name", text: $viewModel.firstName)
+                        TextField("First Name", text: $viewModel.user.firstName)
                         
-                        TextField("Last Name", text: $viewModel.lastName)
+                        TextField("Last Name", text: $viewModel.user.lastName)
                         
-                        TextField("Email", text: $viewModel.email)
+                        TextField("Email", text: $viewModel.user.email)
                             .keyboardType(.emailAddress)
                             .textInputAutocapitalization(.never)
                     }
                     .autocorrectionDisabled()
                     
-                    DatePicker("Birthday", selection: $viewModel.birthday, displayedComponents: .date)
+                    DatePicker("Birthday", selection: $viewModel.user.birthday, displayedComponents: .date)
                     
                     Button(action: {
                         viewModel.saveChanges()
@@ -37,8 +37,8 @@ struct AccountView: View {
                 }
                 
                 Section {
-                    Toggle("Extra Napkins", isOn: $viewModel.extraNapkinsIsOn)
-                    Toggle("Frequest Refills", isOn: $viewModel.frequntRefills)
+                    Toggle("Extra Napkins", isOn: $viewModel.user.extraNapkinsIsOn)
+                    Toggle("Frequest Refills", isOn: $viewModel.user.frequntRefills)
                 } header: {
                     Text("Requests")
                 }
