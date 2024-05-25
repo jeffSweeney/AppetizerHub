@@ -8,6 +8,7 @@
 import SwiftUI
 
 class AccountViewModel: ObservableObject {
+    // Obviously not ideal, but server-side DB isn't the goal of this app practice.
     @AppStorage("user") private var userData: Data?
     
     @Published var user = User()
