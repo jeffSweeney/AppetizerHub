@@ -14,10 +14,6 @@ final class OrderViewModel: ObservableObject {
         appetizersOnOrder.remove(atOffsets: offsets)
     }
     
-    func addToOrder(appetizer: Appetizer) {
-        appetizersOnOrder.append(appetizer)
-    }
-    
     func primaryLabel() -> String {
         let totalPrice = appetizersOnOrder.reduce(0) { $0 + $1.price }
         
