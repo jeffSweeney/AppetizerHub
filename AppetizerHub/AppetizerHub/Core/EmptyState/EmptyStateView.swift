@@ -29,7 +29,7 @@ struct EmptyStateView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 25) {
             Image(context.assetImage)
                 .resizable()
                 .scaledToFit()
