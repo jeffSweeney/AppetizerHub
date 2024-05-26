@@ -42,4 +42,18 @@ struct MockData {
         
         return order
     }
+    
+    static var order2: Order {
+        let order = Order()
+        order.appetizers.append(sampleAppetizer)
+        
+        return order
+    }
+    
+    static var accountViewModel: AccountViewModel {
+        let vm = AccountViewModel()
+        vm.user.orders = [order, order2]
+        
+        return vm
+    }
 }

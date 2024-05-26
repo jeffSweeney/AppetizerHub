@@ -42,6 +42,16 @@ struct AccountView: View {
                 } header: {
                     Text("Requests")
                 }
+                
+                if !viewModel.user.orders.isEmpty {
+                    Section {
+                        ForEach(viewModel.user.orders.reversed()) { order in
+                            PastOrderCell(order: order)
+                        }
+                    } header: {
+                        Text("Past Orders")
+                    }
+                }
             }
             .tint(.brandPrimary)
             .navigationTitle("🥸 Account")
@@ -56,5 +66,5 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView()
+    AccountView(viewModel: MockData.accountViewModel)
 }

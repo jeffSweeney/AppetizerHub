@@ -29,7 +29,7 @@ struct OrderView: View {
                     Button(action: {
                         print("Tapped!")
                     }, label: {
-                        PrimaryButtonView(label: order.placeOrderButtonLabel())
+                        PrimaryButtonView(label: "\(order.currencyTotal) - Place Order")
                             .padding(.bottom)
                     })
                 }

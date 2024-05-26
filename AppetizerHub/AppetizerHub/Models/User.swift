@@ -14,4 +14,5 @@ struct User: Codable {
     var birthday = Date()
     var extraNapkinsIsOn = false
     var frequntRefillsIsOn = false
+    var orders: [Order] = []
 }
