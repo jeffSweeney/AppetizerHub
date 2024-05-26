@@ -12,12 +12,29 @@ struct OrderView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Order View!")
-                .navigationTitle("🧾 Order")
+            VStack {
+                List {
+                    ForEach(viewModel.appetizersOnOrder) { appetizer in
+                        AppetizerListCell(appetizer: appetizer)
+                    }
+                    .onDelete(perform: viewModel.removeFromOrder)
+                }
+                .listStyle(PlainListStyle())
+                
+                Spacer()
+                
+                Button(action: {
+                    print("Tapped!")
+                }, label: {
+                    PrimaryButtonView(label: viewModel.primaryLabel())
+                        .padding(.bottom)
+                })
+            }
+            .navigationTitle("🧾 Order")
         }
     }
 }
 
 #Preview {
-    OrderView()
+    OrderView(viewModel: MockData.orderViewModel)
 }

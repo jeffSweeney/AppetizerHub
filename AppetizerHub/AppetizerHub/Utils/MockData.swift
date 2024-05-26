@@ -17,11 +17,28 @@ struct MockData {
                                            protein: 59,
                                            carbs: 29)
     
+    static let sampleAppetizer2 = Appetizer(id: 456,
+                                            name: "Big Burger",
+                                            description: "Big burger that you know you want to eat!",
+                                            price: 9.99,
+                                            imageURL: "",
+                                            calories: 457,
+                                            protein: 23,
+                                            carbs: 17)
+    
     static let appetizers = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
     
     static var detailViewModel: AppetizerListViewModel {
         let viewModel = AppetizerListViewModel()
         viewModel.selectedAppetizer = Self.sampleAppetizer
+        
+        return viewModel
+    }
+    
+    static var orderViewModel: OrderViewModel {
+        let viewModel = OrderViewModel()
+        viewModel.appetizersOnOrder.append(sampleAppetizer)
+        viewModel.appetizersOnOrder.append(sampleAppetizer2)
         
         return viewModel
     }

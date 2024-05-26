@@ -10,14 +10,17 @@ import Foundation
 final class OrderViewModel: ObservableObject {
     @Published var appetizersOnOrder: [Appetizer] = []
     
-    func removeFromOrder(appetizer: Appetizer) {
-        let removalIndex = appetizersOnOrder.firstIndex { $0 == appetizer }
-        guard let removalIndex else { return }
-        
-        appetizersOnOrder.remove(at: removalIndex)
+    func removeFromOrder(at offsets: IndexSet) {
+        appetizersOnOrder.remove(atOffsets: offsets)
     }
     
     func addToOrder(appetizer: Appetizer) {
         appetizersOnOrder.append(appetizer)
+    }
+    
+    func primaryLabel() -> String {
+        let totalPrice = appetizersOnOrder.reduce(0) { $0 + $1.price }
+        
+        return "\(totalPrice.asCurrency) - Place Order"
     }
 }
