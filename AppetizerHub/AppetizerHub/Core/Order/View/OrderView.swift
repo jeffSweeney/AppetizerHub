@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OrderView: View {
+    @StateObject var viewModel = OrderViewModel()
+    
     var body: some View {
         NavigationStack {
             Text("Order View!")
