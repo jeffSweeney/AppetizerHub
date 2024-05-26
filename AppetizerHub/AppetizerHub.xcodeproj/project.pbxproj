@@ -99,7 +99,6 @@
 		E0008C1E2BFD29770091B10F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E0008C032BF8CFF90091B10F /* AppetizerListCell.swift */,
 				E0008C242BFD6F090091B10F /* XDismissButton.swift */,
 				E0008C1F2BFD29A90091B10F /* NutritionStatStack.swift */,
 			);
@@ -231,6 +230,7 @@
 		E064D89C2BF7EBD100438211 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E0008C032BF8CFF90091B10F /* AppetizerListCell.swift */,
 				E0008C132BFC05090091B10F /* LoadingView.swift */,
 				E0008C262BFD70CA0091B10F /* PrimaryButtonView.swift */,
 			);
