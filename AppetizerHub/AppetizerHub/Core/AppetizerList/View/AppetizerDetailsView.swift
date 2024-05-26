@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AppetizerDetailsView: View {
+    @EnvironmentObject var order: Order
     @ObservedObject var viewModel: AppetizerListViewModel
+    
     let appetizer: Appetizer
     
     init?(viewModel: AppetizerListViewModel) {
@@ -49,7 +51,7 @@ struct AppetizerDetailsView: View {
             Spacer()
             
             Button(action: {
-                print("Tapped!")
+                order.add(appetizer)
             }, label: {
                 PrimaryButtonView(label: "\(appetizer.price.asCurrency) - Add to Order")
             })
