@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct OrderView: View {
-    @StateObject var viewModel = OrderViewModel()
+    @EnvironmentObject var order: Order
     
     var body: some View {
         NavigationStack {
             VStack {
-                if viewModel.appetizersOnOrder.isEmpty {
+                if order.appetizers.isEmpty {
                     EmptyStateView(context: .emptyOrder)
                 } else {
                     List {
-                        ForEach(viewModel.appetizersOnOrder) { appetizer in
+                        ForEach(order.appetizers) { appetizer in
                             AppetizerListCell(appetizer: appetizer)
                         }
-                        .onDelete(perform: viewModel.removeFromOrder)
+                        .onDelete(perform: order.removeFromOrder)
                     }
                     .listStyle(PlainListStyle())
                     
@@ -29,7 +29,7 @@ struct OrderView: View {
                     Button(action: {
                         print("Tapped!")
                     }, label: {
-                        PrimaryButtonView(label: viewModel.primaryLabel())
+                        PrimaryButtonView(label: order.placeOrderButtonLabel())
                             .padding(.bottom)
                     })
                 }
@@ -40,5 +40,6 @@ struct OrderView: View {
 }
 
 #Preview {
-    OrderView(viewModel: MockData.orderViewModel)
+    OrderView()
+        .environmentObject(MockData.order)
 }

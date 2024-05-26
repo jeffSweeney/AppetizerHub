@@ -35,11 +35,11 @@ struct MockData {
         return viewModel
     }
     
-    static var orderViewModel: OrderViewModel {
-        let viewModel = OrderViewModel()
-        viewModel.appetizersOnOrder.append(sampleAppetizer)
-        viewModel.appetizersOnOrder.append(sampleAppetizer2)
+    static var order: Order {
+        var order = Order()
+        order.appetizers.append(sampleAppetizer)
+        order.appetizers.append(sampleAppetizer2)
         
-        return viewModel
+        return order
     }
 }

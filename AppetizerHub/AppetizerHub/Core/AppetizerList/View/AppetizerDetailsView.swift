@@ -52,6 +52,7 @@ struct AppetizerDetailsView: View {
             
             Button(action: {
                 order.add(appetizer)
+                viewModel.selectedAppetizer = nil
             }, label: {
                 PrimaryButtonView(label: "\(appetizer.price.asCurrency) - Add to Order")
             })
