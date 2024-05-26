@@ -24,6 +24,7 @@
 		E0008C322C024B790091B10F /* APSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C312C024B790091B10F /* APSuccess.swift */; };
 		E0008C342C024D4F0091B10F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C332C024D4F0091B10F /* User.swift */; };
 		E0008C382C03727A0091B10F /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C372C03727A0091B10F /* OrderViewModel.swift */; };
+		E0008C3A2C0385E70091B10F /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0008C392C0385E70091B10F /* EmptyStateView.swift */; };
 		E064D8842BF7E3A900438211 /* AppetizerHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8832BF7E3A900438211 /* AppetizerHubApp.swift */; };
 		E064D8862BF7E3A900438211 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064D8852BF7E3A900438211 /* AppetizerTabView.swift */; };
 		E064D8882BF7E3AB00438211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E064D8872BF7E3AB00438211 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		E0008C312C024B790091B10F /* APSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APSuccess.swift; sourceTree = "<group>"; };
 		E0008C332C024D4F0091B10F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0008C372C03727A0091B10F /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		E0008C392C0385E70091B10F /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E064D8802BF7E3A900438211 /* AppetizerHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppetizerHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E064D8832BF7E3A900438211 /* AppetizerHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerHubApp.swift; sourceTree = "<group>"; };
 		E064D8852BF7E3A900438211 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 				E064D8952BF7E4B900438211 /* OrderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E0008C3B2C0389C00091B10F /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				E0008C392C0385E70091B10F /* EmptyStateView.swift */,
+			);
+			path = EmptyState;
 			sourceTree = "<group>";
 		};
 		E064D8772BF7E3A900438211 = {
@@ -219,6 +229,7 @@
 		E064D89B2BF7EBBA00438211 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E0008C3B2C0389C00091B10F /* EmptyState */,
 				E064D8A12BF7EC3500438211 /* Account */,
 				E064D8A02BF7EC2300438211 /* AppetizerList */,
 				E064D89F2BF7EC1600438211 /* AppetizerTab */,
@@ -368,6 +379,7 @@
 				E0008C252BFD6F090091B10F /* XDismissButton.swift in Sources */,
 				E0008C0A2BF9440F0091B10F /* APError.swift in Sources */,
 				E064D8A72BF7EFA400438211 /* MockData.swift in Sources */,
+				E0008C3A2C0385E70091B10F /* EmptyStateView.swift in Sources */,
 				E0008C202BFD29A90091B10F /* NutritionStatStack.swift in Sources */,
 				E0008C042BF8CFF90091B10F /* AppetizerListCell.swift in Sources */,
 				E064D8962BF7E4B900438211 /* OrderView.swift in Sources */,

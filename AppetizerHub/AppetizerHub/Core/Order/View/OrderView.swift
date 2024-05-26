@@ -13,22 +13,26 @@ struct OrderView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                List {
-                    ForEach(viewModel.appetizersOnOrder) { appetizer in
-                        AppetizerListCell(appetizer: appetizer)
+                if viewModel.appetizersOnOrder.isEmpty {
+                    EmptyStateView(context: .emptyOrder)
+                } else {
+                    List {
+                        ForEach(viewModel.appetizersOnOrder) { appetizer in
+                            AppetizerListCell(appetizer: appetizer)
+                        }
+                        .onDelete(perform: viewModel.removeFromOrder)
                     }
-                    .onDelete(perform: viewModel.removeFromOrder)
+                    .listStyle(PlainListStyle())
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        print("Tapped!")
+                    }, label: {
+                        PrimaryButtonView(label: viewModel.primaryLabel())
+                            .padding(.bottom)
+                    })
                 }
-                .listStyle(PlainListStyle())
-                
-                Spacer()
-                
-                Button(action: {
-                    print("Tapped!")
-                }, label: {
-                    PrimaryButtonView(label: viewModel.primaryLabel())
-                        .padding(.bottom)
-                })
             }
             .navigationTitle("🧾 Order")
         }
