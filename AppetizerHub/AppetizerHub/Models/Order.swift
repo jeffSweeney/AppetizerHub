@@ -7,8 +7,24 @@
 
 import SwiftUI
 
-final class Order: ObservableObject {
+final class Order: ObservableObject, Codable {
     @Published var appetizers: [Appetizer] = []
+    
+    enum CodingKeys: CodingKey {
+        case appetizers
+    }
+    
+    init() { }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        appetizers = try container.decode([Appetizer].self, forKey: .appetizers)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(appetizers, forKey: .appetizers)
+    }
     
     func add(_ app: Appetizer) {
         appetizers.append(app)

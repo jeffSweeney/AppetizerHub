@@ -36,7 +36,7 @@ struct MockData {
     }
     
     static var order: Order {
-        var order = Order()
+        let order = Order()
         order.appetizers.append(sampleAppetizer)
         order.appetizers.append(sampleAppetizer2)
         
